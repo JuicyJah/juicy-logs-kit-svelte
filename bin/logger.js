@@ -1,3 +1,4 @@
+import "@sveltejs/kit"
 import { env } from '$env/dynamic/private'
 
 function getURL() {

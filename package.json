@@ -1,7 +1,8 @@
 {
-  "name": "juicy-logs-kit-svelte",
-  "version": "0.1.0",
+  "name": "@juicyjah/juicy-logs-kit-svelte",
+  "version": "0.1.7",
   "description": "Logging tool for sending app logs and events to Juicy Logs from SvelteKit applications",
+  "type": "module",
   "main": "bin/index.js",
   "bin": {
     "juicy-logs-kit-svelte": "bin/index.js"
@@ -18,5 +19,17 @@
     "pubsub"
   ],
   "author": "JuicyJah",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuicyJah/juicy-logs-kit-svelte.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JuicyJah/juicy-logs-kit-svelte/issues"
+  },
+  "homepage": "https://github.com/JuicyJah/juicy-logs-kit-svelte#readme",
+  "peerDependencies": {
+    "@sveltejs/kit": "^2.0.0",
+    "svelte": "^4.0.0 || ^5.0.0"
+  }
 }

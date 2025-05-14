@@ -1,3 +1,3 @@
-import ConfiguredLogger from "./configured_logger"
+import ConfiguredLogger from "./configured_logger.js"
 
 export { ConfiguredLogger as Logger }
