@@ -1,0 +1,22 @@
+{
+  "name": "juicy-logs-kit-svelte",
+  "version": "0.1.0",
+  "description": "Logging tool for sending app logs and events to Juicy Logs from SvelteKit applications",
+  "main": "bin/index.js",
+  "bin": {
+    "juicy-logs-kit-svelte": "bin/index.js"
+  },
+  "scripts": {
+    "start": "node bin/index.js"
+  },
+  "keywords": [
+    "sveltekit",
+    "svelte",
+    "logs",
+    "events",
+    "juicyjah",
+    "pubsub"
+  ],
+  "author": "JuicyJah",
+  "license": "MIT"
+}
