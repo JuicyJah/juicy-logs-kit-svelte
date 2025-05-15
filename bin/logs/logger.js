@@ -1,38 +1,4 @@
-import "@sveltejs/kit"
-import { env } from '$env/dynamic/private'
-
-function getURL() {
-  return env?.JUICY_LOGS_URL
-}
-
-function getToken() {
-  return env?.JUICY_LOGS_TOKEN
-}
-
-function getSourceName() {
-  return env?.JUICY_LOGS_SOURCE_NAME
-}
-
-function getLogConfig(overrides = {}) {
-  const config = {
-    token: getToken(),
-    url: getURL(),
-    source: getSourceName(),
-    console: false,
-    ...overrides
-  }
-
-  if (!config.token)
-    throw new Error('Missing JUICY_LOGS_TOKEN from environment variables')
-
-  if (!config.url)
-    throw new Error('Missing JUICY_LOGS_URL from environment variables')
-
-  if (!config.source)
-    throw new Error('Missing JUICY_LOGS_SOURCE_NAME from environment variables')
-
-  return config
-}
+import config from '../config.js'
 
 function addLogLevelToPayload(payload, level) {
   if (typeof payload === 'string') {
@@ -99,8 +65,7 @@ export default class Logger {
   }
 
   async log(messageOrData, overrides = {}) {
-    const config = getLogConfig(overrides)
-    await sendLog(config, messageOrData)
+    await sendLog(config(overrides), messageOrData)
   }
 
   static async error(...args) {

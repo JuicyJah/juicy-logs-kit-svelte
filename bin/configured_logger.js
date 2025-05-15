@@ -1,4 +1,4 @@
-import Logger from './logger.js'
+import Logger from './logs/logger.js'
 import ConfiguredHooks from './hooks/configured_hooks.js'
 
 const HTTP_REQUEST_CODES = [

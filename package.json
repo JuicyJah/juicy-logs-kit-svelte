@@ -1,6 +1,6 @@
 {
   "name": "@juicyjah/juicy-logs-kit-svelte",
-  "version": "0.1.7",
+  "version": "0.2.1",
   "description": "Logging tool for sending app logs and events to Juicy Logs from SvelteKit applications",
   "type": "module",
   "main": "bin/index.js",
