@@ -3,6 +3,8 @@ The official logging tool for sending app logs and events to Juicy Logs from Sve
 
 This package is meant to abstract the boiler plate of sending logs and events to the Juicy Logs servers, as well as subscribing to the event pubsub.
 
+Signup for a free account at https://logs.juicyjah.com/signup and take the first step to a fresh and painless app logging and event pub/sub experience.
+
 ## How to use
 1. Install the package with npm
 ```
