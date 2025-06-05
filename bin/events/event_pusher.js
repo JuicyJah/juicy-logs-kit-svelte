@@ -9,7 +9,7 @@ async function send(config, data) {
     'Authorization': `Bearer ${token}`
   }
 
-  const event = new Event(data, source)
+  const event = new Event(data, source, config)
 
   if (!event.type && !event.type_id) {
     console.error('JUICY_LOGS: Event type or type_id is required')
@@ -39,7 +39,7 @@ class Event {
   type
   message
   data
-  constructor(data, source) {
+  constructor(data, source, config = {}) {
     if (typeof data === 'string') {
       this.message = data
     } else if (typeof data === 'object') {
@@ -48,6 +48,12 @@ class Event {
     }
 
     this.source = source
+
+    const { juicy_logs_version, juicy_logs_package } = config
+    if (juicy_logs_package)
+      this.juicy_logs_package = juicy_logs_package
+    if (juicy_logs_version)
+      this.juicy_logs_version = juicy_logs_version
   }
 }
 

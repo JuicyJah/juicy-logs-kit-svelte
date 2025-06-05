@@ -19,7 +19,7 @@ async function sendLog(config, data) {
     'Authorization': `Bearer ${token}`
   }
 
-  const body = JSON.stringify(new Log(data, source))
+  const body = JSON.stringify(new Log(data, source, config))
 
   if (config.console) {
     console.log(data)
@@ -41,7 +41,7 @@ async function sendLog(config, data) {
 }
 
 class Log {
-  constructor(data, source) {
+  constructor(data, source, config = {}) {
     if (typeof data === 'string') {
       this.message = data
     } else if (typeof data === 'object') {
@@ -53,6 +53,12 @@ class Log {
       this.level = "INFO"
     }
     this.source = source
+
+    const { juicy_logs_version, juicy_logs_package } = config
+    if (juicy_logs_package)
+      this.juicy_logs_package = juicy_logs_package
+    if (juicy_logs_version)
+      this.juicy_logs_version = juicy_logs_version
   }
 }
 
