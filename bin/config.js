@@ -1,5 +1,9 @@
 import "@sveltejs/kit"
+import packageJSON from "../package.json" assert { type: "json" }
 import { env } from '$env/dynamic/private'
+
+const PACKAGE_NAME = packageJSON.name
+const PACKAGE_VERSION = packageJSON.version
 
 function getURL() {
   return env?.JUICY_LOGS_URL
@@ -18,7 +22,9 @@ function getConfig(overrides = {}) {
     url: getURL(),
     source: getSourceName(),
     console: false,
-    ...overrides
+    ...overrides,
+    juicy_logs_version: PACKAGE_VERSION,
+    juicy_logs_package: PACKAGE_NAME
   }
 
   if (!config.token)
