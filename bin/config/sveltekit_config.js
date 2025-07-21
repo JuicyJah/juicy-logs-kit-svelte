@@ -1,5 +1,5 @@
 import "@sveltejs/kit"
-import packageJSON from "../../package.json" assert { type: "json" }
+import packageJSON from "../../package.json" with { type: "json" }
 import { env } from '$env/dynamic/private'
 import { JuicyLogsBaseConfig } from '@juicyjah/juicy-logs-kit-core'
 
